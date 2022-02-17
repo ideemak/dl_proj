@@ -1,8 +1,7 @@
-#код генератора и дискриминатора взят с https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-
 import torch.nn as nn
 import torch.nn.functional as F
 
+#код генератора и дискриминатора взят с https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 norm_layer = nn.InstanceNorm2d
 class ResBlock(nn.Module):
     def __init__(self, f):

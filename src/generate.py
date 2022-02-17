@@ -1,9 +1,9 @@
 import torch
 from torchvision.utils import save_image
-from utils import img_to_dl, load_checkpoint
-from model import model
+from utils import img_to_dl, load_checkpoint, device, model
 
 
+DEVICE = device()
 def generate(model, dl, domain):
     if domain == 'A':
         A2B = model['G_A2B']
@@ -23,6 +23,6 @@ def generate(model, dl, domain):
 path = '/input_img/'
 image_size = 64
 
-load_checkpoint('epoch 50')
+load_checkpoint(model, 'epoch 50')
 dl = img_to_dl(path, image_size)
 generate(model, dl, 'A')
